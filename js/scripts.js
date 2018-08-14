@@ -5,11 +5,16 @@ $(document).ready(function() {
     var countByInput = parseInt($("#count-by").val());
 
     // returnValues.push(countMultiples(countToInput, countByInput));
-    countMultiples(countToInput, countByInput);
+    if (!countToInput || !countByInput || countToInput <= 0 || countByInput <= 0 || countByInput > countToInput) {
+      alert("Please enter valid numbers.");
+    } else {
+      countMultiples(countToInput, countByInput);
 
-    $("#countToResult").text(countToInput);
-    $("#countByResult").text(countByInput);
-    $("#outputResult").text(returnValues);
+      $("#countToResult").text(countToInput);
+      $("#countByResult").text(countByInput);
+      $("#outputResult").text(returnValues);
+    }
+
 
 // Broken code
     // outputResult.forEach(function(number) {
